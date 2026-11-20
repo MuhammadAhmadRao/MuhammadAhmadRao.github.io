@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404: not found | ahmad</title>
+  <meta name="description" content="oops, wrong folder. this page does not exist.">
+  <link rel="canonical" href="https://muhammadahmadrao.github.io/404.html">
+  <link rel="icon" type="image/png" href="/assets/ghost-yellow.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css?v=4.3">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      background-color: var(--bg);
+      font-family: var(--font-sans);
+      color: var(--ink);
+      text-align: center;
+    }
+    .not-found-card {
+      width: 100%;
+      max-width: 440px;
+      background: var(--surface);
+      border-radius: var(--window-radius);
+      border: var(--window-border);
+      box-shadow: var(--window-shadow);
+      overflow: hidden;
+      text-align: left;
+    }
+    .not-found-body {
+      padding: 2.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.25rem;
+    }
+    .not-found-dino {
+      width: 96px;
+      height: 96px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    .not-found-code {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .not-found-title {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .not-found-text {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+    .btn-return-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blue);
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.15s ease, transform 0.1s ease;
+      margin-top: 0.5rem;
+    }
+    .btn-return-home:hover {
+      background: var(--blue-hover);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+  <main class="not-found-card" role="main">
+    <div class="window-titlebar">
+      <div class="window-traffic-lights" aria-hidden="true">
+        <a href="/" class="traffic-dot traffic-red" aria-label="close and return home"></a>
+        <span class="traffic-dot traffic-yellow"></span>
+        <span class="traffic-dot traffic-green"></span>
+      </div>
+      <span class="window-title-text">404-not-found.err</span>
+      <a href="/" class="window-close-x" aria-label="close">&times;</a>
+    </div>
+    <div class="not-found-body">
+      <img src="/assets/mascot-dino.jpg" alt="confused dino mascot" class="not-found-dino" width="96" height="96">
+      <div class="not-found-code">error 404</div>
+      <h1 class="not-found-title">oops, wrong folder</h1>
+      <p class="not-found-text">this file or path could not be found on the desktop. let's get you back home.</p>
+      <a href="/" class="btn-return-home">return to desktop</a>
+    </div>
+  </main>
+</body>
+</html>
+

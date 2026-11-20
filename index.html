@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ahmad | ai student + dev</title>
+  <meta name="description" content="a student who teaches computers to read, see and (sometimes) fail. ex-flutter dev, now into ml/ai.">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muhammadahmadrao.github.io/">
+  <meta property="og:title" content="ahmad | ai student + dev">
+  <meta property="og:description" content="a student who teaches computers to read, see and (sometimes) fail. ex-flutter dev, now into ml/ai.">
+  <meta property="og:image" content="https://muhammadahmadrao.github.io/assets/og-preview.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://muhammadahmadrao.github.io/">
+  <meta name="twitter:title" content="ahmad | ai student + dev">
+  <meta name="twitter:description" content="a student who teaches computers to read, see and (sometimes) fail. ex-flutter dev, now into ml/ai.">
+  <meta name="twitter:image" content="https://muhammadahmadrao.github.io/assets/og-preview.png">
+
+  <link rel="canonical" href="https://muhammadahmadrao.github.io/">
+
+  <!-- favicon -->
+  <link rel="icon" type="image/png" href="assets/ghost-yellow.png">
+
+  <!-- google fonts: Inter (everything) & Caveat (handwritten) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- v3 styles with cache buster -->
+  <link rel="stylesheet" href="css/styles.css?v=4.3">
+</head>
+<body>
+  <!-- Accessibility skip link -->
+  <a href="#hero" class="skip-link">skip to content</a>
+
+  <!-- =========================================================================
+       1. menu bar strip (macOS style - heyclicky inspired)
+       ========================================================================= -->
+  <header id="menubar-strip" role="banner">
+    <div class="menubar-inner">
+      <div class="menubar-left">
+        <a href="#hero" class="menubar-brand" aria-label="ahmad home">ahmad</a>
+        <nav class="menubar-nav" aria-label="primary navigation">
+          <a href="#work" class="menubar-link">the work</a>
+          <a href="#notes" class="menubar-link">the notes</a>
+          <a href="#services" class="menubar-link">services</a>
+          <a href="#faq" class="menubar-link">faq</a>
+        </nav>
+      </div>
+
+      <div class="menubar-center" aria-hidden="true">
+        <!-- pixel-style ghost glyph logo -->
+        <svg class="menubar-pixel-glyph" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+          <rect x="5" y="1" width="6" height="1"></rect>
+          <rect x="3" y="2" width="10" height="1"></rect>
+          <rect x="2" y="3" width="12" height="1"></rect>
+          <rect x="1" y="4" width="14" height="2"></rect>
+          <rect x="1" y="6" width="14" height="6"></rect>
+          <rect x="3" y="6" width="3" height="3" fill="#ffffff"></rect>
+          <rect x="4" y="7" width="2" height="2" fill="#111111"></rect>
+          <rect x="10" y="6" width="3" height="3" fill="#ffffff"></rect>
+          <rect x="11" y="7" width="2" height="2" fill="#111111"></rect>
+          <rect x="1" y="12" width="3" height="2"></rect>
+          <rect x="5" y="12" width="2" height="1"></rect>
+          <rect x="7" y="12" width="2" height="2"></rect>
+          <rect x="9" y="12" width="2" height="1"></rect>
+          <rect x="12" y="12" width="3" height="2"></rect>
+        </svg>
+      </div>
+
+      <div class="menubar-right">
+        <div class="menubar-icon-group">
+          <!-- wifi icon with tooltip -->
+          <div class="menubar-status-item menubar-icon-wifi" tabindex="0" role="button" aria-label="wifi: ahmad-wifi">
+            <svg class="menubar-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+              <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+              <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+              <line x1="12" y1="20" x2="12.01" y2="20"></line>
+            </svg>
+            <span class="menubar-tooltip" role="tooltip">ahmad-wifi</span>
+          </div>
+
+          <!-- headphones icon / airpods player popover trigger -->
+          <div class="menubar-status-item menubar-player-container">
+            <button id="airpods-trigger" class="menubar-icon-btn" aria-label="ahmad's airpods player" aria-haspopup="dialog" aria-expanded="false">
+              <svg class="menubar-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+                <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+              </svg>
+              <!-- animated equalizer next to headphones while playing -->
+              <span id="airpods-eq" class="menubar-eq" aria-hidden="true">
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+                <span class="eq-bar"></span>
+              </span>
+            </button>
+            <!-- Easter egg toast tooltip -->
+            <span id="headphones-taste-tooltip" class="menubar-tooltip headphones-taste-tooltip" role="status" style="display: none;">nice taste 🎵</span>
+
+            <!-- airpods mac-style popover -->
+            <div id="airpods-popover" class="airpods-popover" role="dialog" aria-label="ahmad's airpods" aria-modal="false" hidden inert>
+              <div class="airpods-popover-header">
+                <div class="airpods-title-row">
+                  <span class="airpods-title">ahmad's airpods</span>
+                  <svg class="airpods-check-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+                    <circle cx="8" cy="8" r="7" fill="#28c840"></circle>
+                    <path d="M5 8.2l2 2 4-4" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+                  </svg>
+                </div>
+                <button id="airpods-close" class="airpods-close-btn" aria-label="close popover">&times;</button>
+              </div>
+
+              <div class="airpods-popover-body">
+                <div class="airpods-track-row">
+                  <img src="assets/pixel-robot-hill.jpg" alt="pixel robot cover" class="airpods-cover" width="48" height="48" loading="lazy">
+                  <div class="airpods-meta">
+                    <div id="player-title" class="airpods-song-title">lady (hear me tonight)</div>
+                    <div id="player-artist" class="airpods-artist">modjo</div>
+                    <div class="airpods-tagline">now playing: the soundtrack of my life</div>
+                  </div>
+                </div>
+
+                <!-- Missing file warning notice -->
+                <div id="player-missing-notice" class="player-missing-notice" style="display: none;"></div>
+
+                <!-- Playback controls & Scrubber -->
+                <div class="airpods-playback-row">
+                  <button id="player-play-btn" class="airpods-play-circle" aria-label="play">
+                    <!-- Play icon -->
+                    <svg id="play-svg" class="player-ctrl-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                      <polygon points="6 4 20 12 6 20 6 4"></polygon>
+                    </svg>
+                    <!-- Pause icon -->
+                    <svg id="pause-svg" class="player-ctrl-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" style="display: none;">
+                      <rect x="6" y="4" width="4" height="16" rx="1"></rect>
+                      <rect x="14" y="4" width="4" height="16" rx="1"></rect>
+                    </svg>
+                  </button>
+
+                  <div class="airpods-timeline">
+                    <input type="range" id="player-progress" class="airpods-scrubber" min="0" max="100" value="0" step="0.1" aria-label="seek progress">
+                    <div class="airpods-time-labels">
+                      <span id="player-time-current">0:00</span>
+                      <span id="player-time-duration">0:00</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Volume slider -->
+                <div class="airpods-volume-row">
+                  <svg class="airpods-volume-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                  </svg>
+                  <input type="range" id="player-volume" class="airpods-volume-slider" min="0" max="1" step="0.01" value="0.8" aria-label="volume">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- bluetooth icon with tooltip -->
+          <div class="menubar-status-item menubar-icon-bluetooth" tabindex="0" role="button" aria-label="bluetooth: ahmad's airpods">
+            <svg class="menubar-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <polyline points="6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5"></polyline>
+            </svg>
+            <span class="menubar-tooltip" role="tooltip">ahmad's airpods</span>
+          </div>
+
+          <!-- battery icon with tooltip -->
+          <div class="menubar-status-item menubar-icon-battery" tabindex="0" role="button" aria-label="battery: 12% (coffee)">
+            <svg class="menubar-svg-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="7" width="16" height="10" rx="2" ry="2"></rect>
+              <line x1="22" y1="11" x2="22" y2="13"></line>
+              <line x1="5" y1="12" x2="7.5" y2="12" stroke-width="2.5"></line>
+            </svg>
+            <span class="menubar-tooltip" role="tooltip">12% (coffee)</span>
+          </div>
+        </div>
+
+        <span class="menubar-clock" id="menubar-clock" aria-label="current time">2:07 am</span>
+
+        <a href="#say-hi" class="menubar-sayhi-link">say hi</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. hero section (wordmark & subtitle with dot grid)
+       ========================================================================= -->
+  <section id="hero" aria-labelledby="hero-title">
+    <!-- faded radial dot grid texture -->
+    <div class="hero-dot-grid" aria-hidden="true"></div>
+
+    <!-- Scatter canvas: 1200px wide, ~820px tall, centered with percentage coordinates -->
+    <div class="hero-scatter-canvas" id="hero-scatter-canvas">
+      
+      <!-- 1. sticker: patrick-we-have-technology gif, 10% width, at (2%, 8%), sits BEHIND window A -->
+      <div class="scatter-item scatter-sticker sticker-patrick" style="left: 2%; top: 8%; width: 10%; z-index: 1;">
+        <img src="assets/patrick-we-have-technology.gif" alt="patrick we have technology" class="sticker-img-raw" width="120" height="90">
+      </div>
+
+      <!-- 2. window A (portrait, 11% wide): kung fu cat gif, caption "kungfu-debugging.mov", at (8%, 10%) -->
+      <div class="scatter-item scatter-window window-a" style="left: 8%; top: 10%; width: 11%; z-index: 2;" aria-hidden="true">
+        <div class="scatter-window-inner drift-anim-1">
+          <div class="scatter-window-titlebar">
+            <div class="window-traffic-lights" aria-hidden="true">
+              <span class="traffic-dot traffic-red"></span>
+              <span class="traffic-dot traffic-yellow"></span>
+              <span class="traffic-dot traffic-green"></span>
+            </div>
+            <span class="window-title-text"></span>
+            <button type="button" class="window-close-x" tabindex="-1" aria-hidden="true">&times;</button>
+          </div>
+          <div class="scatter-window-body">
+            <img src="assets/cat-kungfu.webp" alt="kung fu cat debugging" class="window-media-fit" width="132" height="132">
+          </div>
+        </div>
+        <div class="window-caption">kungfu-debugging.mov</div>
+      </div>
+
+      <!-- 3. name tag (blue, handwritten caps "hello my name is" with "ahmad" in Caveat), 7% wide, at (30%, 4%), rotated -4deg -->
+      <div class="scatter-item scatter-sticker sticker-nametag sticker-nametag-blue" style="left: 30%; top: 4%; width: 7%; z-index: 3; transform: rotate(-4deg);" aria-hidden="true">
+        <div class="nametag-header">hello my name is</div>
+        <div class="nametag-body">
+          <span class="nametag-handwritten">ahmad</span>
+        </div>
+      </div>
+
+      <!-- 4. window B (landscape, 17% wide): penguin gif on a soft pink background, caption "hello.mov", at (41%, 4%) -->
+      <div class="scatter-item scatter-window window-b" style="left: 41%; top: 4%; width: 17%; z-index: 2;" aria-hidden="true">
+        <div class="scatter-window-inner drift-anim-2">
+          <div class="scatter-window-titlebar">
+            <div class="window-traffic-lights" aria-hidden="true">
+              <span class="traffic-dot traffic-red"></span>
+              <span class="traffic-dot traffic-yellow"></span>
+              <span class="traffic-dot traffic-green"></span>
+            </div>
+            <span class="window-title-text"></span>
+            <button type="button" class="window-close-x" tabindex="-1" aria-hidden="true">&times;</button>
+          </div>
+          <div class="scatter-window-body window-body-pink">
+            <img src="assets/pixel-penguin-dance.gif" alt="pixel penguin dancing" class="window-media-contain" width="204" height="150">
+          </div>
+        </div>
+        <div class="window-caption">hello.mov</div>
+      </div>
+
+      <!-- 5. kaomojis: "^ ω ^" at (33%, 15%), "¯\_(ツ)_/¯" at (64%, 11%) -->
+      <div class="scatter-item scatter-kaomoji kaomoji-1" style="left: 33%; top: 15%; z-index: 1;" aria-hidden="true">
+        <span>^ ω ^</span>
+      </div>
+      <div class="scatter-item scatter-kaomoji kaomoji-2" style="left: 64%; top: 11%; z-index: 1;" aria-hidden="true">
+        <span>¯\_(ツ)_/¯</span>
+      </div>
+
+      <!-- 6. window C (landscape, 22% wide): project screenshot placeholder, caption "spam-or-ham.app", at (74%, 7%) -->
+      <div class="scatter-item scatter-window window-c" style="left: 74%; top: 7%; width: 22%; z-index: 2;" aria-hidden="true">
+        <div class="scatter-window-inner drift-anim-3">
+          <div class="scatter-window-titlebar">
+            <div class="window-traffic-lights" aria-hidden="true">
+              <span class="traffic-dot traffic-red"></span>
+              <span class="traffic-dot traffic-yellow"></span>
+              <span class="traffic-dot traffic-green"></span>
+            </div>
+            <span class="window-title-text"></span>
+            <button type="button" class="window-close-x" tabindex="-1" aria-hidden="true">&times;</button>
+          </div>
+          <div class="scatter-window-body window-body-placeholder">
+            <div class="placeholder-graphic">
+              <svg class="placeholder-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span class="placeholder-filename">spam-or-ham.app</span>
+              <span class="placeholder-tag">[nlp / svc model: 97.9% acc]</span>
+            </div>
+          </div>
+        </div>
+        <div class="window-caption">spam-or-ham.app</div>
+      </div>
+
+      <!-- 7. name tag (red) saying "hello my name is" / "vibe coder", touching top-right corner of window C, rotated 6deg -->
+      <div class="scatter-item scatter-sticker sticker-nametag sticker-nametag-red" style="left: 91%; top: 3%; width: 8%; z-index: 3; transform: rotate(6deg);" aria-hidden="true">
+        <div class="nametag-header">hello my name is</div>
+        <div class="nametag-body">
+          <span class="nametag-handwritten">vibe coder</span>
+        </div>
+      </div>
+
+      <!-- 8. window D (landscape, 20% wide): placeholder, caption "brain-tumor.ipynb", at (4%, 62%) -->
+      <div class="scatter-item scatter-window window-d" style="left: 4%; top: 62%; width: 20%; z-index: 2;" aria-hidden="true">
+        <div class="scatter-window-inner drift-anim-4">
+          <div class="scatter-window-titlebar">
+            <div class="window-traffic-lights" aria-hidden="true">
+              <span class="traffic-dot traffic-red"></span>
+              <span class="traffic-dot traffic-yellow"></span>
+              <span class="traffic-dot traffic-green"></span>
+            </div>
+            <span class="window-title-text"></span>
+            <button type="button" class="window-close-x" tabindex="-1" aria-hidden="true">&times;</button>
+          </div>
+          <div class="scatter-window-body window-body-placeholder">
+            <div class="placeholder-graphic">
+              <svg class="placeholder-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                <path d="M2 12h20"></path>
+              </svg>
+              <span class="placeholder-filename">brain-tumor.ipynb</span>
+              <span class="placeholder-tag">[resnet50 87% vs mobilenetv2 83%]</span>
+            </div>
+          </div>
+        </div>
+        <div class="window-caption">brain-tumor.ipynb</div>
+      </div>
+
+      <!-- 9. kaomoji "(¬_¬)" at (26%, 66%) -->
+      <div class="scatter-item scatter-kaomoji kaomoji-3" style="left: 26%; top: 66%; z-index: 1;" aria-hidden="true">
+        <span>(¬_¬)</span>
+      </div>
+
+      <!-- 10. window E (portrait, 13% wide): placeholder, caption "viewvibe.app", at (80%, 56%) -->
+      <div class="scatter-item scatter-window window-e" style="left: 80%; top: 56%; width: 13%; z-index: 2;" aria-hidden="true">
+        <div class="scatter-window-inner drift-anim-5">
+          <div class="scatter-window-titlebar">
+            <div class="window-traffic-lights" aria-hidden="true">
+              <span class="traffic-dot traffic-red"></span>
+              <span class="traffic-dot traffic-yellow"></span>
+              <span class="traffic-dot traffic-green"></span>
+            </div>
+            <span class="window-title-text"></span>
+            <button type="button" class="window-close-x" tabindex="-1" aria-hidden="true">&times;</button>
+          </div>
+          <div class="scatter-window-body window-body-placeholder">
+            <div class="placeholder-graphic">
+              <svg class="placeholder-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="3"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+              <span class="placeholder-filename">viewvibe.app</span>
+              <span class="placeholder-tag">[flutter movie discovery]</span>
+            </div>
+          </div>
+        </div>
+        <div class="window-caption">viewvibe.app</div>
+      </div>
+
+      <!-- 11. kaomoji "{ ^-^ }" at (74%, 58%) -->
+      <div class="scatter-item scatter-kaomoji kaomoji-4" style="left: 74%; top: 58%; z-index: 1;">
+        <span>{ ^-^ }</span>
+      </div>
+
+      <!-- 12. small stickers drawn as inline svg or from assets -->
+      <!-- blue folder at (27%, 30%) -->
+      <div class="scatter-item scatter-sticker sticker-folder-blue sticker-folder-1" style="left: 27%; top: 30%; z-index: 2;">
+        <svg viewBox="0 0 40 32" width="38" height="30" fill="none" aria-hidden="true">
+          <path d="M2 6a2 2 0 0 1 2-2h10l3 3h19a2 2 0 0 1 2 2v19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6z" fill="#70a3ff"/>
+          <path d="M2 10a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10z" fill="#8cb9ff"/>
+        </svg>
+      </div>
+
+      <!-- trash can at (4%, 44%) -->
+      <div class="scatter-item scatter-sticker sticker-trash" id="hero-trash-can" style="left: 4%; top: 44%; z-index: 2; cursor: pointer;" role="button" tabindex="0" aria-label="restore closed desktop windows">
+        <svg viewBox="0 0 28 34" width="28" height="34" fill="none" aria-hidden="true">
+          <path d="M4 10h20l-2 20a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3L4 10z" fill="#cfcfd4" stroke="#9999a1" stroke-width="1.2"/>
+          <path d="M2 8a1.5 1.5 0 0 1 1.5-1.5h21a1.5 1.5 0 0 1 1.5 1.5v1H2V8z" fill="#b0b0b8"/>
+          <path d="M10 5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v1h-8V5z" fill="#9999a1"/>
+          <line x1="10" y1="14" x2="10" y2="28" stroke="#9999a1" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="14" y1="14" x2="14" y2="28" stroke="#9999a1" stroke-width="1.2" stroke-linecap="round"/>
+          <line x1="18" y1="14" x2="18" y2="28" stroke="#9999a1" stroke-width="1.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- folder at (70%, 70%) -->
+      <div class="scatter-item scatter-sticker sticker-folder-blue sticker-folder-2" style="left: 70%; top: 70%; z-index: 2;">
+        <svg viewBox="0 0 40 32" width="38" height="30" fill="none" aria-hidden="true">
+          <path d="M2 6a2 2 0 0 1 2-2h10l3 3h19a2 2 0 0 1 2 2v19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6z" fill="#70a3ff"/>
+          <path d="M2 10a2 2 0 0 1 2-2h32a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10z" fill="#8cb9ff"/>
+        </svg>
+      </div>
+
+      <!-- tiny beachball spinner at (55%, 24%) (easter egg) -->
+      <div class="scatter-item scatter-sticker sticker-beachball" id="easter-beachball" style="left: 55%; top: 24%; z-index: 2; pointer-events: auto; cursor: pointer;" role="button" tabindex="0" aria-label="spinning beachball easter egg">
+        <svg class="beachball-spinner" id="beachball-svg" viewBox="0 0 32 32" width="26" height="26" aria-hidden="true">
+          <circle cx="16" cy="16" r="15" fill="#f5f5f5" stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
+          <path d="M16 16 L16 1 A15 15 0 0 1 29 8.5 Z" fill="#ff5f57"/>
+          <path d="M16 16 L29 8.5 A15 15 0 0 1 29 23.5 Z" fill="#febc2e"/>
+          <path d="M16 16 L29 23.5 A15 15 0 0 1 16 31 Z" fill="#28c840"/>
+          <path d="M16 16 L16 31 A15 15 0 0 1 3 23.5 Z" fill="#2ac8d8"/>
+          <path d="M16 16 L3 23.5 A15 15 0 0 1 3 8.5 Z" fill="#2f6bff"/>
+          <path d="M16 16 L3 8.5 A15 15 0 0 1 16 1 Z" fill="#c455ee"/>
+        </svg>
+      </div>
+
+      <!-- sleeping ghost at bottom-right of hero canvas (88%, 84%), wakes on hover with bubble: "shh, i'm debugging" -->
+      <div class="scatter-item scatter-sticker sticker-ghost" style="left: 88%; top: 84%; z-index: 3;" tabindex="0" role="button" aria-label="sleeping ghost sticker">
+        <img src="assets/ghost-yellow.png" alt="sleeping ghost" class="ghost-sticker-img" width="36" height="36">
+        <div class="ghost-speech-bubble" id="ghost-speech-bubble" role="tooltip">shh, i'm debugging</div>
+      </div>
+
+    </div>
+
+    <!-- Center content (never covered) -->
+    <div class="hero-content">
+      <h1 class="hero-wordmark" id="hero-title">ahmad</h1>
+      <p class="hero-subtitle">a student who teaches computers to read, see and (sometimes) fail.</p>
+      <p class="hero-caption">ex-flutter dev, now into ml/ai</p>
+
+      <div class="hero-buttons-wrap">
+        <div class="hero-btn-item">
+          <a href="#work" class="btn-glossy-blue">
+            <span>see my work</span>
+          </a>
+          <span class="hero-btn-subcaption">projects on github</span>
+        </div>
+        <div class="hero-btn-item">
+          <a href="#say-hi" class="btn-white-pill">
+            <span>say hi</span>
+          </a>
+          <span class="hero-btn-subcaption">i reply fast, promise</span>
+        </div>
+      </div>
+
+      <!-- mobile stacked decorations (under 640px only) -->
+      <div class="mobile-hero-decorations" aria-hidden="true">
+        <div class="scatter-sticker sticker-nametag sticker-nametag-blue mobile-nametag">
+          <div class="nametag-header">hello my name is</div>
+          <div class="nametag-body">
+            <span class="nametag-handwritten">ahmad</span>
+          </div>
+        </div>
+
+        <div class="mac-window mobile-window-b">
+          <div class="scatter-window-titlebar">
+            <div class="window-traffic-lights" aria-hidden="true">
+              <span class="traffic-dot traffic-red"></span>
+              <span class="traffic-dot traffic-yellow"></span>
+              <span class="traffic-dot traffic-green"></span>
+            </div>
+            <span class="window-title-text"></span>
+            <span class="window-close-x" aria-hidden="true">&times;</span>
+          </div>
+          <div class="scatter-window-body window-body-pink">
+            <img src="assets/pixel-penguin-dance.gif" alt="pixel penguin dancing" class="window-media-contain" width="204" height="150">
+          </div>
+        </div>
+        <div class="window-caption">hello.mov</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       centered content container
+       ========================================================================= -->
+  <main class="content-container">
+
+    <!-- the work -->
+    <section id="work" class="quiet-section work-section" aria-labelledby="label-work">
+      <div class="work-header-wrap">
+        <div class="work-pill-badge">
+          <span class="section-label" id="label-work">the work</span>
+          <img src="assets/cabinet-highscore.png" alt="arcade cabinet" class="work-cabinet-sticker" width="24" height="24">
+        </div>
+        <h2 class="section-heading-huge">stuff i built (and broke)</h2>
+      </div>
+
+      <!-- Staggered two-column grid of project windows with large gaps -->
+      <div class="work-projects-grid">
+        
+        <!-- 1. brain-tumor.ipynb (pastel green) -->
+        <article class="work-project-card" data-project-id="brain-tumor" style="position: relative;">
+          <!-- Dino relocated next to top-left corner of first work window -->
+          <div class="work-dino-sticker sticker-dino" aria-hidden="true" style="position: absolute; top: -26px; left: -22px; z-index: 5;">
+            <img src="assets/mascot-dino.jpg" alt="dino mascot" class="dino-card-img" width="46" height="46">
+          </div>
+          <div class="mac-window work-window titlebar-pastel-green" tabindex="0" role="button" aria-haspopup="dialog" aria-label="open brain-tumor.ipynb project details">
+            <div class="window-titlebar">
+              <div class="window-traffic-lights" aria-hidden="true">
+                <span class="traffic-dot traffic-red"></span>
+                <span class="traffic-dot traffic-yellow"></span>
+                <span class="traffic-dot traffic-green"></span>
+              </div>
+              <span class="window-title-text">brain-tumor.ipynb</span>
+              <span class="window-close-x" aria-hidden="true">&times;</span>
+            </div>
+            <div class="work-window-screen">
+              <div class="work-screen-placeholder placeholder-brain-tumor">
+                <div class="placeholder-icon-circle">
+                  <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                    <path d="M2 12h20"></path>
+                  </svg>
+                </div>
+                <div class="placeholder-text-group">
+                  <span class="placeholder-title">brain-tumor.ipynb</span>
+                  <span class="placeholder-sub">transfer learning &bull; mobilenetv2 83% vs resnet50 87%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="window-caption">brain-tumor.ipynb</div>
+          <div class="project-info-block">
+            <p class="project-description">4-class brain mri classifier using transfer learning and deep cnn architectures</p>
+            <div class="project-disclaimer-badge">educational project, not a medical tool</div>
+            <div class="project-tags">
+              <span class="project-tag">tensorflow</span>
+              <span class="project-tag">keras</span>
+              <span class="project-tag">resnet50</span>
+              <span class="project-tag">mobilenetv2</span>
+              <span class="project-tag">7,200 images</span>
+            </div>
+            <div class="project-joke">"two models enter, one gets 4% better"</div>
+          </div>
+        </article>
+
+        <!-- 2. spam-or-ham.app (pastel blue) -->
+        <article class="work-project-card" data-project-id="spam-or-ham">
+          <div class="mac-window work-window titlebar-pastel-blue" tabindex="0" role="button" aria-haspopup="dialog" aria-label="open spam-or-ham.app project details">
+            <div class="window-titlebar">
+              <div class="window-traffic-lights" aria-hidden="true">
+                <span class="traffic-dot traffic-red"></span>
+                <span class="traffic-dot traffic-yellow"></span>
+                <span class="traffic-dot traffic-green"></span>
+              </div>
+              <span class="window-title-text">spam-or-ham.app</span>
+              <span class="window-close-x" aria-hidden="true">&times;</span>
+            </div>
+            <div class="work-window-screen">
+              <div class="spam-mini-demo-widget">
+                <div class="spam-widget-header">
+                  <span class="spam-widget-title">spam or ham?</span>
+                  <a href="https://github.com/MuhammadAhmadRao/sms-spam-detection" target="_blank" rel="noopener noreferrer" class="spam-widget-honest">(just for fun, the real model is on github)</a>
+                </div>
+                <div class="spam-input-group">
+                  <input type="text" id="spam-demo-input" class="spam-demo-input" placeholder="type a message to test..." aria-label="type a message to test spam or ham">
+                  <button type="button" id="spam-demo-btn" class="spam-demo-btn">test</button>
+                </div>
+                <div class="spam-sample-chips">
+                  <button type="button" class="sample-chip" data-sample="URGENT! You have won a cash prize. Claim now">sample: win prize</button>
+                  <button type="button" class="sample-chip" data-sample="hey are we still meeting for coffee at 3?">sample: normal text</button>
+                </div>
+                <div class="spam-stamp-container" id="spam-stamp-container">
+                  <div id="spam-verdict-stamp" class="verdict-stamp verdict-spam stamp-animated">SPAM</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="window-caption">spam-or-ham.app</div>
+          <div class="project-info-block">
+            <p class="project-description">sms spam classification pipeline with tf-idf vectorization and support vector classifier</p>
+            <div class="project-tags">
+              <span class="project-tag">nlp</span>
+              <span class="project-tag">scikit-learn</span>
+              <span class="project-tag">tf-idf</span>
+              <span class="project-tag">svc 97.9% acc</span>
+              <span class="project-tag">streamlit</span>
+            </div>
+            <div class="project-joke">"97.4% precision on 5,572 messages"</div>
+          </div>
+        </article>
+
+        <!-- 3. viewvibe.app (pastel pink) -->
+        <article class="work-project-card" data-project-id="viewvibe">
+          <div class="mac-window work-window titlebar-pastel-pink" tabindex="0" role="button" aria-haspopup="dialog" aria-label="open viewvibe.app project details">
+            <div class="window-titlebar">
+              <div class="window-traffic-lights" aria-hidden="true">
+                <span class="traffic-dot traffic-red"></span>
+                <span class="traffic-dot traffic-yellow"></span>
+                <span class="traffic-dot traffic-green"></span>
+              </div>
+              <span class="window-title-text">viewvibe.app</span>
+              <span class="window-close-x" aria-hidden="true">&times;</span>
+            </div>
+            <div class="work-window-screen">
+              <div class="work-screen-placeholder placeholder-viewvibe">
+                <div class="placeholder-icon-circle">
+                  <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="3"></rect>
+                    <path d="M7 2v20"></path>
+                    <path d="M17 2v20"></path>
+                    <path d="M2 12h20"></path>
+                    <path d="M2 7h5"></path>
+                    <path d="M2 17h5"></path>
+                    <path d="M17 7h5"></path>
+                    <path d="M17 17h5"></path>
+                  </svg>
+                </div>
+                <div class="placeholder-text-group">
+                  <span class="placeholder-title">viewvibe.app</span>
+                  <span class="placeholder-sub">flutter movie discovery &bull; tmdb api</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="window-caption">viewvibe.app</div>
+          <div class="project-info-block">
+            <p class="project-description">cross-platform flutter movie discovery app with trending feeds, search, and trailers</p>
+            <div class="project-tags">
+              <span class="project-tag">flutter</span>
+              <span class="project-tag">dart</span>
+              <span class="project-tag">tmdb-api</span>
+              <span class="project-tag">cross-platform</span>
+              <span class="project-tag">open-source</span>
+            </div>
+            <div class="project-joke">"because 45 minutes of netflix scrolling wasn't enough"</div>
+          </div>
+        </article>
+
+        <!-- 4. we-split.app (pastel yellow) -->
+        <article class="work-project-card" data-project-id="we-split">
+          <div class="mac-window work-window titlebar-pastel-yellow" tabindex="0" role="button" aria-haspopup="dialog" aria-label="open we-split.app project details">
+            <div class="window-titlebar">
+              <div class="window-traffic-lights" aria-hidden="true">
+                <span class="traffic-dot traffic-red"></span>
+                <span class="traffic-dot traffic-yellow"></span>
+                <span class="traffic-dot traffic-green"></span>
+              </div>
+              <span class="window-title-text">we-split.app</span>
+              <span class="window-close-x" aria-hidden="true">&times;</span>
+            </div>
+            <div class="work-window-screen">
+              <div class="work-screen-placeholder placeholder-we-split">
+                <div class="placeholder-icon-circle">
+                  <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                  </svg>
+                </div>
+                <div class="placeholder-text-group">
+                  <span class="placeholder-title">we-split.app</span>
+                  <span class="placeholder-sub">flutter expense tracker &bull; neobrutalism</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="window-caption">we-split.app</div>
+          <div class="project-info-block">
+            <p class="project-description">expense tracker and bill splitter built with flutter and neobrutalism design</p>
+            <div class="project-tags">
+              <span class="project-tag">flutter</span>
+              <span class="project-tag">dart</span>
+              <span class="project-tag">neobrutalism</span>
+              <span class="project-tag">bill-splitter</span>
+            </div>
+            <div class="project-joke">"ending friendships over biryani bills since 2026"</div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Row of three smaller "side quest" windows -->
+      <div class="side-quests-section">
+        <div class="side-quests-header">
+          <span class="side-quests-pill">side quests</span>
+        </div>
+
+        <div class="side-quests-grid">
+          
+          <!-- Side quest 1: fake-news-detector (green) -->
+          <article class="side-quest-card" data-project-id="fake-news-detector" role="button" tabindex="0" aria-label="open fake-news-detector details">
+            <div class="mac-window work-window titlebar-pastel-green">
+              <div class="window-titlebar">
+                <div class="window-traffic-lights" aria-hidden="true">
+                  <span class="traffic-dot traffic-red"></span>
+                  <span class="traffic-dot traffic-yellow"></span>
+                  <span class="traffic-dot traffic-green"></span>
+                </div>
+                <span class="window-title-text">fake-news-detector.py</span>
+                <span class="window-close-x" aria-hidden="true">&times;</span>
+              </div>
+              <div class="work-window-screen work-screen-sidequest">
+                <div class="placeholder-icon-circle-sm">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"></path>
+                    <path d="M18 14h-8"></path>
+                    <path d="M15 18h-5"></path>
+                    <path d="M10 6h8v4h-8V6Z"></path>
+                  </svg>
+                </div>
+                <span class="sidequest-placeholder-title">fake-news-detector.py</span>
+              </div>
+            </div>
+            <div class="window-caption">fake-news-detector.py</div>
+            <div class="project-info-block">
+              <p class="project-description">python nlp text classifier pipeline</p>
+              <div class="project-tags">
+                <span class="project-tag">python</span>
+                <span class="project-tag">nlp</span>
+                <span class="project-tag">classifier</span>
+              </div>
+              <div class="project-joke">reading between the lines so you don't have to</div>
+            </div>
+          </article>
+
+          <!-- Side quest 2: crypto-dashboard (blue) -->
+          <article class="side-quest-card" data-project-id="crypto-dashboard" role="button" tabindex="0" aria-label="open crypto-dashboard details">
+            <div class="mac-window work-window titlebar-pastel-blue">
+              <div class="window-titlebar">
+                <div class="window-traffic-lights" aria-hidden="true">
+                  <span class="traffic-dot traffic-red"></span>
+                  <span class="traffic-dot traffic-yellow"></span>
+                  <span class="traffic-dot traffic-green"></span>
+                </div>
+                <span class="window-title-text">crypto-dashboard.js</span>
+                <span class="window-close-x" aria-hidden="true">&times;</span>
+              </div>
+              <div class="work-window-screen work-screen-sidequest">
+                <div class="placeholder-icon-circle-sm">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </div>
+                <span class="sidequest-placeholder-title">crypto-dashboard.js</span>
+              </div>
+            </div>
+            <div class="window-caption">crypto-dashboard.js</div>
+            <div class="project-info-block">
+              <p class="project-description">javascript realtime crypto tracker</p>
+              <div class="project-tags">
+                <span class="project-tag">javascript</span>
+                <span class="project-tag">chart.js</span>
+                <span class="project-tag">crypto-api</span>
+              </div>
+              <div class="project-joke">watching charts fluctuate in real time</div>
+            </div>
+          </article>
+
+          <!-- Side quest 3: onshape-cad (pink) -->
+          <article class="side-quest-card" data-project-id="onshape-cad" role="button" tabindex="0" aria-label="open onshape-cad details">
+            <div class="mac-window work-window titlebar-pastel-pink">
+              <div class="window-titlebar">
+                <div class="window-traffic-lights" aria-hidden="true">
+                  <span class="traffic-dot traffic-red"></span>
+                  <span class="traffic-dot traffic-yellow"></span>
+                  <span class="traffic-dot traffic-green"></span>
+                </div>
+                <span class="window-title-text">cad-models.step</span>
+                <span class="window-close-x" aria-hidden="true">&times;</span>
+              </div>
+              <div class="work-window-screen work-screen-sidequest">
+                <div class="placeholder-icon-circle-sm">
+                  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                    <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                  </svg>
+                </div>
+                <span class="sidequest-placeholder-title">cad-models.step</span>
+              </div>
+            </div>
+            <div class="window-caption">cad-models.step</div>
+            <div class="project-info-block">
+              <p class="project-description">parametric 3d mechanical cad designs in onshape</p>
+              <div class="project-tags">
+                <span class="project-tag">onshape</span>
+                <span class="project-tag">3d-cad</span>
+                <span class="project-tag">parametric</span>
+              </div>
+              <div class="project-joke">texas map, lego brick, cup, dice</div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 5. the notes -->
+    <section id="notes" class="quiet-section notes-section" aria-labelledby="label-notes">
+      <div class="notes-header-wrap">
+        <span class="section-label" id="label-notes">the notes</span>
+      </div>
+
+      <!-- Notes container with curved folder arc behind -->
+      <div class="notes-stage-container">
+        
+        <!-- Curved folder arc (V/U shape) -->
+        <div class="notes-folder-arc" id="notes-folder-arc" aria-hidden="true">
+          <!-- Left Arm Folders (Lavender to Pink) -->
+          <div class="folder-arc-arm folder-arm-left">
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 4%; top: 6%; transform: rotate(-24deg); color: #b8c0ff; opacity: 0.35;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 6%; top: 9%; transform: rotate(-22deg); color: #bebeff; opacity: 0.45;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 8%; top: 13%; transform: rotate(-20deg); color: #c6bcff; opacity: 0.6;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 10%; top: 18%; transform: rotate(-18deg); color: #cebaff; opacity: 0.75;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 12%; top: 23%; transform: rotate(-16deg); color: #d8b7ff; opacity: 0.9;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 14%; top: 29%; transform: rotate(-14deg); color: #e1b5ff; opacity: 0.95;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 16%; top: 36%; transform: rotate(-12deg); color: #ebb2ff; opacity: 1;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 18%; top: 43%; transform: rotate(-10deg); color: #f3affb; opacity: 1;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 20%; top: 51%; transform: rotate(-8deg); color: #f9acf3; opacity: 1;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 22%; top: 59%; transform: rotate(-6deg); color: #ffaae8; opacity: 1;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 24%; top: 67%; transform: rotate(-4deg); color: #ffa7dc; opacity: 1;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 26%; top: 74%; transform: rotate(-2deg); color: #ffa5cf; opacity: 1;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 28%; top: 80%; transform: rotate(0deg); color: #ffa3c2; opacity: 0.95;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 30%; top: 85%; transform: rotate(2deg); color: #ffa1b6; opacity: 0.85;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 32%; top: 89%; transform: rotate(4deg); color: #ff9fa9; opacity: 0.7;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="left: 34%; top: 92%; transform: rotate(6deg); color: #ff9e9e; opacity: 0.5;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+          </div>
+
+          <!-- Right Arm Folders (Green to Yellow) -->
+          <div class="folder-arc-arm folder-arm-right">
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 34%; top: 92%; transform: rotate(-6deg); color: #6de88a; opacity: 0.5;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 32%; top: 89%; transform: rotate(-4deg); color: #75ea87; opacity: 0.7;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 30%; top: 85%; transform: rotate(-2deg); color: #7dec85; opacity: 0.85;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 28%; top: 80%; transform: rotate(0deg); color: #86ee82; opacity: 0.95;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 26%; top: 74%; transform: rotate(2deg); color: #91f080; opacity: 1;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 24%; top: 67%; transform: rotate(4deg); color: #9cf17d; opacity: 1;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 22%; top: 59%; transform: rotate(6deg); color: #a8f37b; opacity: 1;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 20%; top: 51%; transform: rotate(8deg); color: #b5f579; opacity: 1;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 18%; top: 43%; transform: rotate(10deg); color: #c3f776; opacity: 1;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 16%; top: 36%; transform: rotate(12deg); color: #d2f874; opacity: 1;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 14%; top: 29%; transform: rotate(14deg); color: #e1fa72; opacity: 0.95;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 12%; top: 23%; transform: rotate(16deg); color: #eefb70; opacity: 0.9;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 10%; top: 18%; transform: rotate(18deg); color: #f7f96e; opacity: 0.75;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 8%; top: 13%; transform: rotate(20deg); color: #faef6c; opacity: 0.6;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 6%; top: 9%; transform: rotate(22deg); color: #fbe46a; opacity: 0.45;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+            <svg viewBox="0 0 54 44" class="stacked-folder-svg" style="right: 4%; top: 6%; transform: rotate(24deg); color: #fcd868; opacity: 0.35;"><path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="currentColor" opacity="0.85"/><path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="currentColor"/></svg>
+          </div>
+        </div>
+
+        <!-- 3 Stickers around the arc (none overlapping notes text) -->
+        <div class="notes-sticker notes-sticker-console" aria-hidden="true">
+          <img src="assets/handheld-console.png" alt="handheld console sticker" class="notes-sticker-img" width="46" height="46" loading="lazy">
+        </div>
+        <div class="notes-sticker notes-sticker-ghost" aria-hidden="true">
+          <img src="assets/ghost-yellow.png" alt="yellow ghost sticker" class="notes-sticker-img" width="36" height="36" loading="lazy">
+        </div>
+        <div class="notes-sticker notes-sticker-dino" aria-hidden="true">
+          <img src="assets/mascot-dino.jpg" alt="dino mascot sticker" class="notes-sticker-img notes-dino-card" width="44" height="44" loading="lazy">
+        </div>
+
+        <!-- The Notes Window (about 540px wide, title bar #efe6b8) -->
+        <div class="mac-window notes-window" id="notes-window">
+          <div class="window-titlebar notes-titlebar">
+            <div class="window-traffic-lights" aria-hidden="true">
+              <span class="traffic-dot traffic-red"></span>
+              <span class="traffic-dot traffic-yellow"></span>
+              <span class="traffic-dot traffic-green"></span>
+            </div>
+            <div class="notes-title-group">
+              <svg class="notes-icon-svg" viewBox="0 0 16 16" width="13" height="13" fill="#bfa33a" aria-hidden="true">
+                <rect x="2" y="1" width="12" height="14" rx="2" fill="#fff59d" stroke="#cbb040" stroke-width="1.2"/>
+                <line x1="5" y1="5" x2="11" y2="5" stroke="#bfa33a" stroke-width="1.2" stroke-linecap="round"/>
+                <line x1="5" y1="8" x2="11" y2="8" stroke="#bfa33a" stroke-width="1.2" stroke-linecap="round"/>
+                <line x1="5" y1="11" x2="9" y2="11" stroke="#bfa33a" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              <span class="window-title-text notes-title-text">notes</span>
+            </div>
+            <span class="window-close-x" aria-hidden="true">&times;</span>
+          </div>
+
+          <div class="notes-window-body">
+            <!-- Typewriter text area -->
+            <div class="notes-text-content" id="notes-typewriter-area">
+              <span id="notes-text-target"></span><span class="notes-cursor" id="notes-cursor" aria-hidden="true">|</span>
+            </div>
+
+            <!-- Bottom of the window: robot avatar with "ahmad, student" on left & handwritten signature on right -->
+            <div class="notes-window-footer">
+              <div class="notes-author-wrap">
+                <img src="assets/pixel-robot-hill.jpg" alt="ahmad pixel robot avatar" class="notes-avatar-img" width="38" height="38" loading="lazy">
+                <div class="notes-author-meta">
+                  <span class="notes-author-name">ahmad,</span>
+                  <span class="notes-author-role">student</span>
+                </div>
+              </div>
+              <div class="notes-signature">ahmad</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 3. Dotted divider line below -->
+      <div class="section-dotted-divider" aria-hidden="true"></div>
+
+      <!-- 4. Quest Log & Skills txt windows -->
+      <div class="quest-log-section">
+        
+        <!-- quest-log.txt finder list window -->
+        <div class="mac-window quest-log-window">
+          <div class="window-titlebar">
+            <div class="window-traffic-lights" aria-hidden="true">
+              <span class="traffic-dot traffic-red"></span>
+              <span class="traffic-dot traffic-yellow"></span>
+              <span class="traffic-dot traffic-green"></span>
+            </div>
+            <span class="window-title-text">quest-log.txt</span>
+            <span class="window-close-x" aria-hidden="true">&times;</span>
+          </div>
+          <div class="finder-list-body">
+            <div class="finder-row">
+              <div class="finder-file-info">
+                <svg class="finder-folder-icon" viewBox="0 0 20 16" width="16" height="13" fill="#69a3ff" aria-hidden="true">
+                  <path d="M2 3a1 1 0 0 1 1-1h4l2 2h8a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3z"/>
+                </svg>
+                <span class="finder-row-title">flutter certification (pmysd-navtac)</span>
+              </div>
+              <span class="finder-row-tag">certified</span>
+            </div>
+
+            <div class="finder-row">
+              <div class="finder-file-info">
+                <svg class="finder-folder-icon" viewBox="0 0 20 16" width="16" height="13" fill="#69a3ff" aria-hidden="true">
+                  <path d="M2 3a1 1 0 0 1 1-1h4l2 2h8a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3z"/>
+                </svg>
+                <span class="finder-row-title">flutter developer intern at roots millennium international school (oct 2023 to jan 2024)</span>
+              </div>
+              <span class="finder-row-tag">internship</span>
+            </div>
+
+            <div class="finder-row">
+              <div class="finder-file-info">
+                <svg class="finder-folder-icon" viewBox="0 0 20 16" width="16" height="13" fill="#69a3ff" aria-hidden="true">
+                  <path d="M2 3a1 1 0 0 1 1-1h4l2 2h8a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3z"/>
+                </svg>
+                <span class="finder-row-title">robotics & iot certification (nutech)</span>
+              </div>
+              <span class="finder-row-tag">certified</span>
+            </div>
+
+            <div class="finder-row">
+              <div class="finder-file-info">
+                <svg class="finder-folder-icon" viewBox="0 0 20 16" width="16" height="13" fill="#69a3ff" aria-hidden="true">
+                  <path d="M2 3a1 1 0 0 1 1-1h4l2 2h8a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3z"/>
+                </svg>
+                <span class="finder-row-title">bs artificial intelligence at nutech</span>
+              </div>
+              <span class="finder-row-tag">degree</span>
+            </div>
+
+            <div class="finder-row">
+              <div class="finder-file-info">
+                <svg class="finder-folder-icon" viewBox="0 0 20 16" width="16" height="13" fill="#69a3ff" aria-hidden="true">
+                  <path d="M2 3a1 1 0 0 1 1-1h4l2 2h8a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3z"/>
+                </svg>
+                <span class="finder-row-title">now: ml/ai projects, fiverr and internships</span>
+              </div>
+              <span class="finder-row-tag finder-tag-active">in progress</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- skills.txt window -->
+        <div class="mac-window skills-window">
+          <div class="window-titlebar">
+            <div class="window-traffic-lights" aria-hidden="true">
+              <span class="traffic-dot traffic-red"></span>
+              <span class="traffic-dot traffic-yellow"></span>
+              <span class="traffic-dot traffic-green"></span>
+            </div>
+            <span class="window-title-text">skills.txt</span>
+            <span class="window-close-x" aria-hidden="true">&times;</span>
+          </div>
+          <div class="skills-window-body">
+            <div class="skills-editor-header">// stack & tools</div>
+            <div class="skills-tag-grid">
+              <span class="skill-code-tag">flutter</span>
+              <span class="skill-code-tag">dart</span>
+              <span class="skill-code-tag">python</span>
+              <span class="skill-code-tag">tensorflow</span>
+              <span class="skill-code-tag">keras</span>
+              <span class="skill-code-tag">scikit-learn</span>
+              <span class="skill-code-tag">nlp</span>
+              <span class="skill-code-tag">streamlit</span>
+              <span class="skill-code-tag">javascript</span>
+              <span class="skill-code-tag">git</span>
+              <span class="skill-code-tag">onshape</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- 6. marquee ("the receipts") -->
+    <section id="marquee" class="quiet-section receipts-section" aria-labelledby="label-marquee">
+      <div class="receipts-header-wrap">
+        <span class="section-label" id="label-marquee">the receipts</span>
+      </div>
+
+      <div class="marquee-track-container" aria-label="scrolling marquee text">
+        <div class="marquee-scroll-inner">
+          <div class="marquee-content-row">
+            <span class="receipt-word receipt-black">i build stuff every day</span>
+            <span class="receipt-word receipt-faded">i build stuff every day</span>
+            <span class="receipt-word receipt-black">i build stuff every day</span>
+            <span class="receipt-word receipt-faded">i build stuff every day</span>
+          </div>
+          <div class="marquee-content-row" aria-hidden="true">
+            <span class="receipt-word receipt-black">i build stuff every day</span>
+            <span class="receipt-word receipt-faded">i build stuff every day</span>
+            <span class="receipt-word receipt-black">i build stuff every day</span>
+            <span class="receipt-word receipt-faded">i build stuff every day</span>
+          </div>
+        </div>
+
+        <!-- CSS Holographic Oval Sticker overlapping marquee -->
+        <div class="holographic-sticker" aria-label="no bugs? sticker">
+          <div class="holographic-sticker-inner">
+            <span class="holographic-sticker-text">no bugs?</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. services -->
+    <section id="services" class="quiet-section services-section" aria-labelledby="label-services">
+      <div class="services-header-wrap">
+        <span class="section-label" id="label-services">services</span>
+        <h2 class="services-heading">what i can help you with</h2>
+      </div>
+
+      <!-- 3 white windows side by side with NO prices -->
+      <div class="services-grid">
+        
+        <!-- Service 1: say hi -->
+        <div class="mac-window service-window">
+          <div class="window-titlebar">
+            <div class="window-traffic-lights" aria-hidden="true">
+              <span class="traffic-dot traffic-red"></span>
+              <span class="traffic-dot traffic-yellow"></span>
+              <span class="traffic-dot traffic-green"></span>
+            </div>
+            <span class="window-title-text">say-hi.chat</span>
+            <span class="window-close-x" aria-hidden="true">&times;</span>
+          </div>
+          <div class="service-window-body">
+            <div class="service-badge">friendly chat</div>
+            <h3 class="service-title">say hi</h3>
+            <p class="service-subtitle">a friendly tech chat & pairing session</p>
+            <ul class="service-bullets">
+              <li>tell me about your idea</li>
+              <li>flutter or ml/ai questions</li>
+              <li>internship chats are welcome too</li>
+            </ul>
+            <div class="service-action-wrap" data-gig-key="sayHi"></div>
+          </div>
+        </div>
+
+        <!-- Service 2: flutter app -->
+        <div class="mac-window service-window">
+          <div class="window-titlebar">
+            <div class="window-traffic-lights" aria-hidden="true">
+              <span class="traffic-dot traffic-red"></span>
+              <span class="traffic-dot traffic-yellow"></span>
+              <span class="traffic-dot traffic-green"></span>
+            </div>
+            <span class="window-title-text">flutter-app.dart</span>
+            <span class="window-close-x" aria-hidden="true">&times;</span>
+          </div>
+          <div class="service-window-body">
+            <div class="service-badge">mobile development</div>
+            <h3 class="service-title">flutter app</h3>
+            <p class="service-subtitle">cross-platform ios & android engineering</p>
+            <ul class="service-bullets">
+              <li>built viewvibe: trending, search, trailers, watchlist (tmdb api)</li>
+              <li>built we-split: expense tracking and splitting, neobrutalism design</li>
+              <li>flutter developer intern at roots millennium (oct 2023 to jan 2024)</li>
+            </ul>
+            <div class="service-action-wrap" data-gig-key="flutterApp"></div>
+          </div>
+        </div>
+
+        <!-- Service 3: ml/ai project -->
+        <div class="mac-window service-window">
+          <div class="window-titlebar">
+            <div class="window-traffic-lights" aria-hidden="true">
+              <span class="traffic-dot traffic-red"></span>
+              <span class="traffic-dot traffic-yellow"></span>
+              <span class="traffic-dot traffic-green"></span>
+            </div>
+            <span class="window-title-text">ml-pipeline.ipynb</span>
+            <span class="window-close-x" aria-hidden="true">&times;</span>
+          </div>
+          <div class="service-window-body">
+            <div class="service-badge">machine learning</div>
+            <h3 class="service-title">ml/ai project</h3>
+            <p class="service-subtitle">classification & nlp prototypes</p>
+            <ul class="service-bullets">
+              <li>4-class mri classifier with transfer learning (mobilenetv2, resnet50)</li>
+              <li>sms spam classifier: tf-idf + svc with a streamlit app</li>
+              <li>python nlp fake news classifier</li>
+            </ul>
+            <div class="service-action-wrap" data-gig-key="mlProject"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Small centered window under services: < open to internships + freelance > -->
+      <div class="internships-window-wrap">
+        <div class="mac-window internships-window">
+          <div class="window-titlebar">
+            <div class="window-traffic-lights" aria-hidden="true">
+              <span class="traffic-dot traffic-red"></span>
+              <span class="traffic-dot traffic-yellow"></span>
+              <span class="traffic-dot traffic-green"></span>
+            </div>
+            <span class="window-title-text">&lt; open to internships + freelance &gt;</span>
+            <span class="window-close-x" aria-hidden="true">&times;</span>
+          </div>
+          <div class="internships-window-body">
+            <p class="internships-line">student, curious, fast learner. <a href="#say-hi" class="internships-msg-link">message me.</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. faq -->
+    <section id="faq" class="quiet-section faq-section" aria-labelledby="label-faq">
+      <div class="faq-header-wrap">
+        <span class="section-label" id="label-faq">faq</span>
+      </div>
+
+      <!-- narrow centered column (about 640px) of plain white rounded cards -->
+      <div class="faq-container">
+        
+        <!-- Q1: who are you -->
+        <div class="faq-card" data-faq-index="0">
+          <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-0">
+            <span class="faq-question-text">who are you?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div id="faq-ans-0" class="faq-answer-collapse" role="region">
+            <div class="faq-answer-inner">
+              <p>i'm muhammad ahmad rao, a bs artificial intelligence student at nutech university in islamabad. former flutter developer intern at roots millennium international school, now shifting deeper into ml/ai and computer vision.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q2: what do you build -->
+        <div class="faq-card" data-faq-index="1">
+          <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-1">
+            <span class="faq-question-text">what do you build?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div id="faq-ans-1" class="faq-answer-collapse" role="region">
+            <div class="faq-answer-inner">
+              <p>cross-platform mobile apps with flutter and dart (like viewvibe and we-split), and machine learning classification pipelines with tensorflow, keras, and scikit-learn (like brain tumor mri classification and sms spam detection).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q3: are you open to internships and freelance work -->
+        <div class="faq-card" data-faq-index="2">
+          <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-2">
+            <span class="faq-question-text">are you open to internships and freelance work?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div id="faq-ans-2" class="faq-answer-collapse" role="region">
+            <div class="faq-answer-inner">
+              <p>yes! i'm actively looking for internships and building toward fiverr freelancing gigs. if your team needs someone passionate, resourceful, and quick at picking up new frameworks, let's connect.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q4: is the brain tumor model a doctor -->
+        <div class="faq-card" data-faq-index="3">
+          <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-3">
+            <span class="faq-question-text">is the brain tumor model a doctor?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div id="faq-ans-3" class="faq-answer-collapse" role="region">
+            <div class="faq-answer-inner">
+              <p>absolutely not. it's strictly an educational project comparing transfer learning with mobilenetv2 (83%) vs resnet50 (87%) across 7,200 mri scans. always trust real medical doctors, not university notebooks.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q5: how do you vibe code -->
+        <div class="faq-card" data-faq-index="4">
+          <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-4">
+            <span class="faq-question-text">how do you vibe code?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div id="faq-ans-4" class="faq-answer-collapse" role="region">
+            <div class="faq-answer-inner">
+              <p>headphones on, good music playing, antigravity running as my pair programmer, breaking things in python and flutter, and fixing them in public until everything runs cleanly.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q6: how do i reach you -->
+        <div class="faq-card" data-faq-index="5">
+          <button type="button" class="faq-question-btn" aria-expanded="false" aria-controls="faq-ans-5">
+            <span class="faq-question-text">how do i reach you?</span>
+            <span class="faq-toggle-icon" aria-hidden="true">+</span>
+          </button>
+          <div id="faq-ans-5" class="faq-answer-collapse" role="region">
+            <div class="faq-answer-inner">
+              <p>scroll right down to <a href="#say-hi" class="faq-inline-link">say hi</a>! you can check my github at github.com/MuhammadAhmadRao or dm me on instagram @ahmadxrao. i reply fast, promise.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 9. say hi -->
+    <section id="say-hi" class="quiet-section sayhi-section" aria-labelledby="label-say-hi">
+      <span id="contact" style="position: absolute; pointer-events: none;"></span>
+      <div class="sayhi-header-wrap">
+        <span class="section-label" id="label-say-hi">say hi</span>
+        <h2 class="sayhi-huge-heading">say hi</h2>
+        <p class="sayhi-caption">open for internships, fiverr freelance gigs, and friendly ml/flutter chats.</p>
+      </div>
+
+      <!-- small link pills: github, instagram, linkedin, fiverr, email (missing ones show [TODO ahmad] and not clickable) -->
+      <div class="sayhi-pills-row">
+        <!-- github (clickable) -->
+        <a href="https://github.com/MuhammadAhmadRao" class="sayhi-pill sayhi-pill-active" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>github</span>
+        </a>
+
+        <!-- instagram (clickable) -->
+        <a href="https://instagram.com/ahmadxrao" class="sayhi-pill sayhi-pill-active" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          <span>instagram</span>
+        </a>
+
+        <!-- linkedin (clickable) -->
+        <a href="https://www.linkedin.com/in/muhammadahmadrao-" class="sayhi-pill sayhi-pill-active" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.64 1.64 0 1 0 0-3.28 1.64 1.64 0 0 0 0 3.28M7.86 18.5V10.13H5.07V18.5h2.79z"/></svg>
+          <span>linkedin</span>
+        </a>
+
+        <!-- fiverr slot (rendered only if valid public fiverr link exists) -->
+        <span id="sayhi-fiverr-slot"></span>
+
+        <!-- email (clickable) -->
+        <a href="mailto:ahmadxrao@gmail.com" class="sayhi-pill sayhi-pill-active">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          <span>email</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       giant wordmark footer exactly like the reference
+       ========================================================================= -->
+  <footer id="site-footer" role="contentinfo">
+    <!-- SVG Definition for Aqua Blue Folder -->
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden; pointer-events: none;" aria-hidden="true">
+      <defs>
+        <linearGradient id="folderGradientAqua" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#72b5fb"/>
+          <stop offset="100%" stop-color="#4a90e2"/>
+        </linearGradient>
+        <linearGradient id="folderGradientAquaTab" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#8bc4fc"/>
+          <stop offset="100%" stop-color="#5fa5ea"/>
+        </linearGradient>
+      </defs>
+      <symbol id="icon-blue-folder" viewBox="0 0 54 44">
+        <path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="url(#folderGradientAquaTab)" opacity="0.9"/>
+        <path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="url(#folderGradientAqua)"/>
+        <path d="M5 14h38" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1"/>
+      </symbol>
+    </svg>
+
+    <div class="footer-inner-container">
+      
+      <!-- four quiet columns -->
+      <div class="footer-columns-grid">
+        <!-- col 1: work -->
+        <div class="footer-col">
+          <div class="footer-col-title">work</div>
+          <ul class="footer-col-links">
+            <li><a href="#work" class="footer-link">the work</a></li>
+            <li><a href="#notes" class="footer-link">the notes</a></li>
+            <li><a href="#services" class="footer-link">services</a></li>
+          </ul>
+        </div>
+
+        <!-- col 2: resources -->
+        <div class="footer-col">
+          <div class="footer-col-title">resources</div>
+          <ul class="footer-col-links">
+            <li><a href="https://github.com/MuhammadAhmadRao" class="footer-link" target="_blank" rel="noopener noreferrer">github</a></li>
+            <li><button type="button" class="footer-link-btn" id="credits-trigger">credits</button></li>
+            <li><button type="button" class="footer-link-btn" id="boring-mode-trigger">boring mode</button></li>
+          </ul>
+        </div>
+
+        <!-- col 3: connect -->
+        <div class="footer-col">
+          <div class="footer-col-title">connect</div>
+          <ul class="footer-col-links">
+            <li><a href="https://instagram.com/ahmadxrao" class="footer-link" target="_blank" rel="noopener noreferrer">instagram</a></li>
+            <li><a href="https://www.linkedin.com/in/muhammadahmadrao-" class="footer-link" target="_blank" rel="noopener noreferrer">linkedin</a></li>
+            <li id="footer-fiverr-slot"></li>
+            <li><a href="mailto:ahmadxrao@gmail.com" class="footer-link">email</a></li>
+          </ul>
+        </div>
+
+        <!-- col 4: disclaimer -->
+        <div class="footer-col footer-col-disclaimer">
+          <div class="footer-col-title">disclaimer</div>
+          <p class="footer-disclaimer-text">*built with vibes + antigravity. all models here are students too, not doctors.*</p>
+        </div>
+      </div>
+
+      <!-- giant "ahmad" wordmark built from blue folder icons with trash can on left and folder on right -->
+      <div class="footer-wordmark-stage" id="folder-wordmark-stage">
+        <!-- trash can to the left of the wordmark -->
+        <div class="footer-trash-can" aria-hidden="true">
+          <svg viewBox="0 0 32 38" width="34" height="40" fill="none" class="footer-trash-svg">
+            <path d="M4 11h24l-2.5 23a3 3 0 0 1-3 3H9.5a3 3 0 0 1-3-3L4 11z" fill="#cfcfd4" stroke="#9999a1" stroke-width="1.2"/>
+            <path d="M2 9a1.5 1.5 0 0 1 1.5-1.5h25a1.5 1.5 0 0 1 1.5 1.5v1H2V9z" fill="#b0b0b8"/>
+            <path d="M11 5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v2h-10V5z" fill="#9999a1"/>
+            <line x1="11" y1="16" x2="11" y2="32" stroke="#9999a1" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="16" y1="16" x2="16" y2="32" stroke="#9999a1" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="21" y1="16" x2="21" y2="32" stroke="#9999a1" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- 5x7 pixel grid of blue folder icons spelling "ahmad" -->
+        <div class="folder-pixel-grid" id="folder-wordmark-grid" aria-label="ahmad wordmark formed by folder icons">
+          <!-- Populated by js/main.js with blue folders popping in with stagger -->
+        </div>
+
+        <!-- one folder to the right of the wordmark -->
+        <div class="footer-right-folder" aria-hidden="true">
+          <svg viewBox="0 0 54 44" width="48" height="40" class="footer-single-folder-svg">
+            <defs>
+              <linearGradient id="folderGradientRight" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#72b5fb"/>
+                <stop offset="100%" stop-color="#4a90e2"/>
+              </linearGradient>
+            </defs>
+            <path d="M4 8a4 4 0 0 1 4-4h12l5 5h21a4 4 0 0 1 4 4v23a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8z" fill="url(#folderGradientRight)" opacity="0.88"/>
+            <path d="M4 14a4 4 0 0 1 4-4h38a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V14z" fill="url(#folderGradientRight)"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- last line: © 2026 ahmad -->
+      <div class="footer-copyright-row">
+        <span>© 2026 ahmad</span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- scripts -->
+  <script src="js/data.js?v=4.3"></script>
+  <script src="js/windows.js?v=4.3"></script>
+  <script src="js/player.js?v=4.3"></script>
+  <script src="js/main.js?v=4.3"></script>
+</body>
+</html>

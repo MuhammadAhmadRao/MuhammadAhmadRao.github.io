@@ -1,0 +1,13 @@
+.DS_Store
+/*_built*.png
+/*_modal*.png
+/screenshot_*.png
+/work_*.png
+/sidequests_*.png
+/quest_log_*.png
+/test_*.mjs
+_test/
+_audit_screens/
+AUDIT_REPORT*.md
+_originals/
+assets/certs/original/
