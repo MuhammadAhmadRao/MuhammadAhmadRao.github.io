@@ -58,6 +58,7 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   text-transform: lowercase; /* strict v3 rule: all visible text lowercase */
+  overflow-x: clip;
 }
 
 body {
@@ -69,7 +70,7 @@ body {
   min-height: 100vh;
   text-transform: lowercase;
   position: relative;
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -766,7 +767,7 @@ button {
   text-align: center;
   padding: 40px 1.5rem;
   margin-top: 0;
-  overflow: visible;
+  overflow: clip;
   outline: none;
 }
 
@@ -1497,17 +1498,32 @@ button {
 /* under 1024px: show only windows B and C plus 3 stickers */
 @media (max-width: 1024px) {
   #hero {
-    min-height: 820px;
+    min-height: 800px;
     padding: 30px 1.5rem;
+    overflow: clip;
   }
 
   .hero-scatter-canvas {
-    width: 960px;
+    width: min(960px, calc(100vw - 32px));
+    max-width: calc(100vw - 32px);
     height: 700px;
   }
 
   .window-b {
-    top: 1% !important;
+    left: 4% !important;
+    top: 4% !important;
+    width: 24% !important;
+    min-width: 150px !important;
+    max-width: 200px !important;
+  }
+
+  .window-c {
+    left: auto !important;
+    right: 4% !important;
+    top: 6% !important;
+    width: 25% !important;
+    min-width: 160px !important;
+    max-width: 210px !important;
   }
 
   /* hide windows A, D, E */
@@ -1528,14 +1544,77 @@ button {
   .sticker-trash,
   .sticker-folder-1,
   .sticker-folder-2,
-  .sticker-dino {
+  .hero-scatter-canvas .sticker-dino {
     display: none !important;
   }
 
-  .sticker-nametag-blue,
-  .sticker-beachball,
+  .sticker-nametag-blue {
+    display: block !important;
+    left: 4% !important;
+    top: 1% !important;
+    width: 60px !important;
+  }
+
+  .sticker-beachball {
+    display: block !important;
+    left: 6% !important;
+    bottom: 8% !important;
+  }
+
   .sticker-ghost {
     display: block !important;
+    left: auto !important;
+    right: 5% !important;
+    bottom: 8% !important;
+  }
+
+  .sticker-ghost .ghost-speech-bubble {
+    left: auto !important;
+    right: 0 !important;
+    transform: translateY(4px) !important;
+  }
+
+  .sticker-ghost:hover .ghost-speech-bubble,
+  .sticker-ghost:focus .ghost-speech-bubble,
+  .sticker-ghost:focus-visible .ghost-speech-bubble,
+  .ghost-speech-bubble.is-active {
+    transform: translateY(0) !important;
+  }
+
+  .sticker-ghost .ghost-speech-bubble::after {
+    left: auto !important;
+    right: 14px !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 860px) and (min-width: 641px) {
+  #menubar-strip {
+    padding: 0 1rem;
+  }
+  .menubar-left {
+    gap: 0.9rem;
+  }
+  .menubar-nav {
+    gap: 0.85rem;
+  }
+  .menubar-right {
+    gap: 0.65rem;
+  }
+  .menubar-icon-group {
+    gap: 0.4rem;
+  }
+}
+
+.work-dino-sticker {
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .work-dino-sticker {
+    left: -6px !important;
+    top: -18px !important;
+    transform: scale(0.9);
   }
 }
 
